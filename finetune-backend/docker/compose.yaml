@@ -1,3 +1,4 @@
+version: "3.9"
 services:
   redis:
     image: redis:7
@@ -9,17 +10,16 @@ services:
       dockerfile: docker/Dockerfile.api
     env_file: ../.env
     volumes:
-      - ../artifacts:/app/artifacts
+      - ../runs:/app/runs
       - ../uploads:/app/uploads
       - ../.hf_cache:/app/.hf_cache
     ports:
       - "${API_PORT:-8000}:8000"
-    # REMOVE THIS BLOCK
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - capabilities: [gpu]
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: [gpu]
 
   worker:
     build:
@@ -28,12 +28,11 @@ services:
     env_file: ../.env
     depends_on: [redis]
     volumes:
-      - ../artifacts:/app/artifacts
+      - ../runs:/app/runs
       - ../uploads:/app/uploads
       - ../.hf_cache:/app/.hf_cache
-    # REMOVE THIS BLOCK
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - capabilities: [gpu]
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: [gpu]

@@ -1,13 +1,11 @@
-FROM python:3.10-slim  
+FROM python:3.10-slim
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
-
 WORKDIR /app
 COPY docker/requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
-
 COPY . .
 ENV TRANSFORMERS_CACHE=/app/.hf_cache
 ENV HF_HOME=/app/.hf_cache
+CMD ["python3", "backend/jobs/worker.py"]
 
-CMD ["python3", "-m", "apps.worker.worker"]
