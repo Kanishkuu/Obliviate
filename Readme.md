@@ -17,11 +17,11 @@ Obliviate provides the technical solution to both of these compliance and safety
 
 ## Demo Video Link
 
-`[https://drive.google.com/drive/folders/1HznjUrHd0EW7NOByMXbxgAIGOOPOq49D?usp=share_link`
+[Video link here](https://drive.google.com/drive/folders/1OpoNkit5jUMgWElGSPeGX0i3metAcJLp?usp=sharing)
 
 ## Presentation Link
 
-`https://drive.google.com/drive/folders/1OpoNkit5jUMgWElGSPeGX0i3metAcJLp?usp=sharing`
+[PPT link here](https://drive.google.com/drive/folders/1HznjUrHd0EW7NOByMXbxgAIGOOPOq49D?usp=share_link)
 
 ---
 
